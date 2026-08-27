@@ -1460,83 +1460,22 @@ what destroys the watermark — <em>deliberate rewording</em> is. Back-translati
 similar phrasing and therefore similar token sequences; a paraphrase prompt explicitly asks
 for different ones. The practical implication: the watermark survives ordinary round-tripping
 through tools, and fails against anyone actively trying to remove it.</p>
-<h3 id="57-the-learned-detector">5.7 The learned detector</h3>
-<div class="table-scroll"><table>
-<thead>
-<tr>
-<th>Tokens</th>
-<th>AUC mean</th>
-<th>AUC weighted</th>
-<th>AUC Bayesian</th>
-<th>TPR@1% mean</th>
-<th>TPR@1% Bayesian</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>25</td>
-<td>0.6798</td>
-<td>0.7067</td>
-<td>0.6833</td>
-<td>0.250</td>
-<td>0.133</td>
-</tr>
-<tr>
-<td>50</td>
-<td>0.8020</td>
-<td>0.8563</td>
-<td>0.8182</td>
-<td>0.292</td>
-<td>0.300</td>
-</tr>
-<tr>
-<td>100</td>
-<td>0.9454</td>
-<td>0.9656</td>
-<td>0.9475</td>
-<td>0.525</td>
-<td>0.558</td>
-</tr>
-<tr>
-<td>200</td>
-<td>0.9943</td>
-<td>0.9992</td>
-<td>0.9942</td>
-<td>0.883</td>
-<td>0.833</td>
-</tr>
-<tr>
-<td>400</td>
-<td>1.0000</td>
-<td>1.0000</td>
-<td>1.0000</td>
-<td>1.000</td>
-<td>1.000</td>
-</tr>
-</tbody>
-</table></div>
-<p>The Bayesian detector from the paper was trained on the existing corpus and evaluated on
-<strong>disjoint prompts</strong>. It gives no meaningful improvement over the flat mean, and the simple
-weighted mean beats both at every length below saturation.</p>
-<p>This is a negative result and it is worth stating: on this model, <strong>the extra machinery is
-not worth it</strong>. The per-depth weighted mean is training-free, has a closed-form null, and is
-the better detector. A larger training corpus might change this, but the burden of proof sits
-with the more complex method.</p>
-<h3 id="58-inference-cost-latency-vs-throughput">5.8 Inference cost: latency vs. throughput</h3>
+<h3 id="57-inference-cost-latency-vs-throughput">5.7 Inference cost: latency vs. throughput</h3>
 <p>These are two different quantities with two different answers, and conflating them is easy.</p>
 <p><strong>Latency — what a single user experiences — is essentially unaffected.</strong> At batch 1 the
 watermark adds about 1.7 ms per token: 4.2% of a decode step on E4B, 1.7% on the 31B. Nobody
 notices this.</p>
 <p><strong>Batched throughput is a different story</strong>, and the raw numbers look alarming:</p>
+<p><em>Throughput in tokens per second — higher is faster.</em></p>
 <div class="table-scroll"><table>
 <thead>
 <tr>
 <th>Batch size</th>
-<th>Gemma-4-E4B plain</th>
-<th>Gemma-4-E4B watermarked</th>
+<th>Gemma-4-E4B plain (tok/s)</th>
+<th>Gemma-4-E4B watermarked (tok/s)</th>
 <th>Gemma-4-E4B overhead</th>
-<th>Gemma-4-31B plain</th>
-<th>Gemma-4-31B watermarked</th>
+<th>Gemma-4-31B plain (tok/s)</th>
+<th>Gemma-4-31B watermarked (tok/s)</th>
 <th>Gemma-4-31B overhead</th>
 </tr>
 </thead>
@@ -1579,6 +1518,10 @@ notices this.</p>
 </tr>
 </tbody>
 </table></div>
+<p>Read the plain and watermarked columns as speeds: the plain figure is higher because it is
+<em>faster</em>. Watermarking adds work at every decoding step, so fewer tokens come out per second,
+and the overhead column is that shortfall as a percentage. At batch 32 on E4B, 770 tok/s
+becomes 329 tok/s — the same GPU produces well under half as much text per second.</p>
 <p>Overhead climbs steeply with batch size on both models, and is consistently ~35% lower on
 the 31B than on E4B. That much is a real measurement. But it does <em>not</em> mean the method is
 expensive, and the next table shows why.</p>
@@ -1741,16 +1684,15 @@ be flat at about 4% everywhere instead of climbing to 57%:</p>
   (8.6% vs 25.6% on the 31B), and detection already saturates at AUC 1.000 by 200 tokens with
   depth 30. Depth is part of the key, so it must be fixed before keys are issued.</li>
 </ul>
-<p><strong>Before deploying, benchmark your own serving stack.</strong> These numbers characterise
-HuggingFace <code>generate()</code>; they are not a property of SynthID, and they should not be used to
-argue either for or against watermarking on a different stack.</p>
+<p>Measured end to end on both models, the depth lever looks like this:</p>
+<p><em>Watermarked throughput at each depth, tokens per second — higher is faster.</em></p>
 <div class="table-scroll"><table>
 <thead>
 <tr>
 <th>Depth</th>
-<th>Gemma-4-E4B tok/s</th>
+<th>Gemma-4-E4B (tok/s)</th>
 <th>Gemma-4-E4B overhead</th>
-<th>Gemma-4-31B tok/s</th>
+<th>Gemma-4-31B (tok/s)</th>
 <th>Gemma-4-31B overhead</th>
 </tr>
 </thead>
@@ -1785,6 +1727,10 @@ argue either for or against watermarking on a different stack.</p>
 </tr>
 </tbody>
 </table></div>
+<p><strong>Before deploying, benchmark your own serving stack.</strong> These numbers characterise
+HuggingFace <code>generate()</code>; they are not a property of SynthID, and they should not be used to
+argue either for or against watermarking on a different stack.</p>
+<h4 id="detection-costs-almost-nothing">Detection costs almost nothing</h4>
 <div class="table-scroll"><table>
 <thead>
 <tr>
@@ -1824,7 +1770,7 @@ argue either for or against watermarking on a different stack.</p>
 <p>Detection is a hash and a mean. It needs the tokenizer, not the model, and CPU is within 13%
 of GPU on E4B and indistinguishable on the 31B — so the detection service needs no
 accelerator at all.</p>
-<h3 id="59-a-bug-worth-knowing-about">5.9 A bug worth knowing about</h3>
+<h3 id="58-a-bug-worth-knowing-about">5.8 A bug worth knowing about</h3>
 <p>Upstream Transformers builds the watermark's g-value sampling table with a <strong>device-local
 RNG</strong>:</p>
 <pre><code class="language-python">generator = torch.Generator(device=device).manual_seed(sampling_table_seed)
@@ -1845,7 +1791,7 @@ match across devices, and one documenting the upstream behaviour so we learn whe
 upstream.</p>
 <p>Anyone deploying SynthID via Transformers should check this. It would not show up in a
 single-machine test, and it silently breaks CPU detection services and mixed-hardware fleets.</p>
-<h3 id="510-worked-example">5.10 Worked example</h3>
+<h3 id="59-worked-example">5.9 Worked example</h3>
 <p>Generated on GPU with key <code>markets-research/v1</code>, detected on <strong>CPU</strong> — which only works
 because of the fix above.</p>
 <blockquote>
@@ -1890,7 +1836,7 @@ prevailing interest rates. […]</p>
 </table></div>
 <p>The watermarked and unwatermarked outputs read identically well; the difference lives
 entirely in the statistics of which near-equivalent words were chosen.</p>
-<h3 id="511-token-round-trip">5.11 Token round-trip</h3>
+<h3 id="510-token-round-trip">5.10 Token round-trip</h3>
 <p>The watermark lives in <em>token</em> choices, but a detector is handed <em>text</em> and must re-tokenise
 it. Of 400 watermarked texts, only <strong>66.8% re-tokenise to exactly the original ids</strong> — but
 <strong>99.5% of individual token positions agree</strong>. The disagreements are isolated boundary
@@ -1926,7 +1872,7 @@ implementation and adds what a deployment needs.</p>
 </tr>
 <tr>
 <td><code>bayesian.py</code></td>
-<td>Training and use of the learned detector</td>
+<td>Training and use of the learned detector (optional; not used by default)</td>
 </tr>
 <tr>
 <td><code>attacks.py</code></td>
