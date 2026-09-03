@@ -1,1 +1,5 @@
-Built and validated an internal watermarking capability (SynthID-Text), and confirmed it meets the bar for production use. Evaluated across two Gemma-4 model sizes: detection is reliable on long-form prose with a 1.3% false-alarm rate on human writing, and we measured no quality or accuracy cost on either model. This is the same approach Google runs in Gemini and Anthropic uses for Claude, so we are adopting a proven method rather than pioneering one. POC: Built a CPU-only detection service
+Weekly update
+
+• Detection now identifies which model produced a text, not just that we produced it. Each served model gets its own key from one escrowed secret, so a hit distinguishes Gemma from Nemotron. Key-to-model bindings are version-controlled and fingerprint-verified, so a wrong secret now fails at startup instead of silently emitting undetectable output.
+
+• Packaged for serving-platform handoff: the inference image installs a five-file wheel with no detector and no HTTP service in it. Three distributions now, so detection runs CPU-only away from the GPU fleet. Integration documented as a vLLM plugin, not a fork — the image stays stock vLLM plus one wheel. Key management and detection are deployable today; the vLLM-side processor still needs writing, ~1–2 weeks and GPU access to validate.
