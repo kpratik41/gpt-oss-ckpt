@@ -6,3 +6,6 @@ Weekly update
 
 
 Corrected the BIRD evaluation harness configuration that had skipped 173 test questions because of an overly restrictive prompt-length limit, then worked with the BIRD team to rerun only the affected questions using the unchanged model checkpoint and inference logic. The repaired evaluation increased ReToolSQL’s test execution accuracy from 71.72% to 78.14%, positioning it at #2 on the BIRD single-model leaderboard.
+
+
+cat apex-0.1-cp312-cp312-linux_x86_64.whl.part1 apex-0.1-cp312-cp312-linux_x86_64.whl.part2 > apex-0.1-cp312-cp312-linux_x86_64.whl
