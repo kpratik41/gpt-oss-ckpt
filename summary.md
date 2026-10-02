@@ -11,3 +11,6 @@ September 2026, as of September 21; estimated month-to-date costs in USD.
 *Mona and Ema are inferred from instance names, not verified directory names. Employee IDs come from creator/session identities; the shared resource tag `SID=R432839` is not used for personal attribution.*
 
 Creator-tagged costs are not complete personal bills: 58.7% of account costs lack creator tags. Pratik's amount excludes any unattributed shared-service usage. No resources were changed.
+
+cat transformer_engine-2.16.1-cp312-cp312-linux_x86_64.whl.part* > transformer_engine-2.16.1-cp312-cp312-linux_x86_64.whl
+pip install transformer_engine-2.16.1-cp312-cp312-linux_x86_64.whl
