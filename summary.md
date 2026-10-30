@@ -19,3 +19,10 @@ pip install transformer_engine-2.16.1-cp312-cp312-linux_x86_64.whl
 Established the roadmap and benchmark suite for Gemma 4 31B long-context training with CP=2 and efficient attention, targeting verl-based NL2SQL RL. Documented and committed the code and findings.
 Validated single-GPU attention through 40k tokens, demonstrating linear attention working-memory growth and approximately 1.37× FFPA speedup, alongside numerical and masking checks.
 Pending: finalize the verl training recipe and run an end-to-end training job on multi-GPU hardware, validating CP=2, backward-pass correctness, memory usage, and training stability before NL2SQL integration.
+
+
+
+Investigated Megatron and FFPA paths for long-context training; gradient-consistency issues led us to prioritize the validated FlexAttention CP=2 path while keeping FFPA optimization gated on correctness.
+Successfully ran Gemma 4 31B NL2SQL RL training using verl, FSDP2, and FlexAttention across 16 GPUs. The run completed multiple updates, with held-out accuracy improving from 72.50% to 73.28% after five updates.
+
+
