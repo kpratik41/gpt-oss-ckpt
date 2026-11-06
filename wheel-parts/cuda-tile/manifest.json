@@ -1,0 +1,26 @@
+{
+  "part_size_bytes": 24000000,
+  "files": [
+    {
+      "original_name": "nvidia_cuda_tileiras-13.5.37-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "original_bytes": 42173556,
+      "original_sha256": "d1657aa03ef05bba0ae22baa34728d955fa11524ef3be5a4f6401ef589dba5b5",
+      "payload_name": "nvidia_cuda_tileiras-13.5.37-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "payload_bytes": 42173556,
+      "payload_sha256": "d1657aa03ef05bba0ae22baa34728d955fa11524ef3be5a4f6401ef589dba5b5",
+      "compression": "none",
+      "parts": [
+        {
+          "name": "nvidia_cuda_tileiras-13.5.37-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.part001",
+          "bytes": 24000000,
+          "sha256": "67991ec7d3bab5520f7cf735c9e337134c070d055ed951be410be4a0fd6e0e56"
+        },
+        {
+          "name": "nvidia_cuda_tileiras-13.5.37-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.part002",
+          "bytes": 18173556,
+          "sha256": "4fe08b9701d077d694e4b5727112d701a1277b9fb18e1b9db457de6acf044113"
+        }
+      ]
+    }
+  ]
+}

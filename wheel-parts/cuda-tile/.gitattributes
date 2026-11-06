@@ -1,0 +1,2 @@
+*.part* -text -diff -merge -filter
+*.whl -text -diff -merge -filter
