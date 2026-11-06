@@ -1,0 +1,144 @@
+{
+  "part_size_bytes": 24000000,
+  "files": [
+    {
+      "original_name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl",
+      "original_bytes": 196558813,
+      "original_sha256": "8e81f8c76435ad31aa41edc6c0c9d26de971a293b190183d2816da71547614d7",
+      "payload_name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.zip",
+      "payload_bytes": 196441030,
+      "payload_sha256": "5619b4609beb8a3ddeae6db0267c3b482467f49a674976ab56ce6186e0b45adb",
+      "compression": "zip",
+      "tested_zip_bytes": 196441030,
+      "parts": [
+        {
+          "name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.zip.part001",
+          "bytes": 24000000,
+          "sha256": "ab26c9e157ccb76a8fe2b3ca6e42ce0e6549364ae86da3cc9c148eff135d9e8a"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.zip.part002",
+          "bytes": 24000000,
+          "sha256": "c0364425bebace17be7ebec1bc1c716f98846f881434607e9a0a347202591510"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.zip.part003",
+          "bytes": 24000000,
+          "sha256": "ee36c5c6ad3aabd876d01c92564dd62cd2a7e549f95022cfcc9dec55275a4818"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.zip.part004",
+          "bytes": 24000000,
+          "sha256": "630935177bb81a20bb7b3db778a24a4c6c40c10577dba5d178e078d54a3068e3"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.zip.part005",
+          "bytes": 24000000,
+          "sha256": "dfc717151a84c9421a7135f24c472459b4888b88cee46a16be8b2e48e0761faf"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.zip.part006",
+          "bytes": 24000000,
+          "sha256": "42547bfef5c0f07a6681f2a1a6b618e695963435bf4271d0ac006686e97a7154"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.zip.part007",
+          "bytes": 24000000,
+          "sha256": "56629371c3aadc12cd563af77fc1e97da270e8a89ea06a9008b955cf243135e7"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.zip.part008",
+          "bytes": 24000000,
+          "sha256": "939bc182447cd175d74f8ebd56906a8fb09cd9208df2b8a966ba8117767db38d"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.zip.part009",
+          "bytes": 4441030,
+          "sha256": "2696e9a32a7ad0fe76124776765c4908c822385a42916aebe7b26fb6f809d0dc"
+        }
+      ]
+    },
+    {
+      "original_name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl",
+      "original_bytes": 322288410,
+      "original_sha256": "7a67070c1e7e99c95abd1319623f044e8a1b3fb46f774bfdea949f0a4fc79638",
+      "payload_name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl",
+      "payload_bytes": 322288410,
+      "payload_sha256": "7a67070c1e7e99c95abd1319623f044e8a1b3fb46f774bfdea949f0a4fc79638",
+      "compression": "none",
+      "tested_zip_bytes": 322355097,
+      "parts": [
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part001",
+          "bytes": 24000000,
+          "sha256": "d867ba1676afab03911b08564280ff4288b41ad4d067736a0780990240e53415"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part002",
+          "bytes": 24000000,
+          "sha256": "33dc891348dca3457b6998669610ced52ba248522b35019a99f6897ef8e40ebc"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part003",
+          "bytes": 24000000,
+          "sha256": "b032b87ef5fab120553ea8e2d6659ef83e0e40faabd8599f9f8afca9ea45c54d"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part004",
+          "bytes": 24000000,
+          "sha256": "b082a3b9809999a92f02ebb424f609200e70dbd75ebec1c2e98dc37370a324ec"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part005",
+          "bytes": 24000000,
+          "sha256": "692e31d35c3d9150b06870295ece62274c3ba827644429270d862fb9579de4e1"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part006",
+          "bytes": 24000000,
+          "sha256": "f35ef5547ac535e91793758aa0372a877e8dc61c741fd6e4b84ac096943ce9f2"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part007",
+          "bytes": 24000000,
+          "sha256": "ea1dbe202187443444712632ea550791652ca1790bb9618a1564de4d44a50f8d"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part008",
+          "bytes": 24000000,
+          "sha256": "29d7cdc9ac19c80033ffbe1507ebed3fc3ba7be47d0d47569d2bc8977e84d920"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part009",
+          "bytes": 24000000,
+          "sha256": "4df0300a6b00386727140578639e3472ac3cf63997ae912f1ef933a7fbda92d8"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part010",
+          "bytes": 24000000,
+          "sha256": "896ca69f08a236b731db215264eeec9c1c27e8632b3c04de4610d286e2273bf0"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part011",
+          "bytes": 24000000,
+          "sha256": "4668f8d11f93b325c9a46eab4b6b6010c633086a5500fac09ece8d22453b48dd"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part012",
+          "bytes": 24000000,
+          "sha256": "0a40f7f0253ab606983ac9e88a929172cd5f14730dc516ebbe943e7b28f67014"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part013",
+          "bytes": 24000000,
+          "sha256": "c544fe50c73a6f9e1187dd3cf53a2af2752d469c6c8a02d53da298c72b02eaa5"
+        },
+        {
+          "name": "mamba_ssm-2.3.2.post1+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl.part014",
+          "bytes": 10288410,
+          "sha256": "e6440ac781cb0cf3efd6acb3cb9573e4dc72ae489822397b0f7f4333b716837c"
+        }
+      ]
+    }
+  ]
+}
