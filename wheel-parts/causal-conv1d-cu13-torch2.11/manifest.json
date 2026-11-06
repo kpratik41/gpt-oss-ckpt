@@ -1,0 +1,62 @@
+{
+  "part_size_bytes": 24000000,
+  "source_url": "https://github.com/astral-sh-build/build-causal-conv1d/releases/download/v1.7.0/causal_conv1d-1.7.0%2Bcu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+  "files": [
+    {
+      "original_name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+      "original_bytes": 206786335,
+      "original_sha256": "2a4b36227bb5e45a7e3bc9a64dc7821b3057d1b6332cfd62e5288183154e7ece",
+      "payload_name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+      "payload_bytes": 206786335,
+      "payload_sha256": "2a4b36227bb5e45a7e3bc9a64dc7821b3057d1b6332cfd62e5288183154e7ece",
+      "compression": "none",
+      "parts": [
+        {
+          "name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.part001",
+          "bytes": 24000000,
+          "sha256": "c4617bf7499e9701aaaefa327f11ee26c71617902502c67cfeebfd09374befae"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.part002",
+          "bytes": 24000000,
+          "sha256": "9bd9a4d5d3eb68220dbeda72b69c3c29c57962a7047712df1724654c72e161ed"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.part003",
+          "bytes": 24000000,
+          "sha256": "79185fa09c757de40af9e617b4b371cec565f910518e168195bb22308495a08f"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.part004",
+          "bytes": 24000000,
+          "sha256": "c14c498ab08ffaf35c821874687e67062037339110aa83ba2946bb435b3f9252"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.part005",
+          "bytes": 24000000,
+          "sha256": "40404f84030f593190748e0e779c0d247a9b2fd52e2aed41f726b743833a727a"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.part006",
+          "bytes": 24000000,
+          "sha256": "4fd1f4c37c34a61a38c1104b9991f0ef4ddac8f617626aa9b1baf29609ccb909"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.part007",
+          "bytes": 24000000,
+          "sha256": "b55ac5a96dbb88b1acf4402bac32948274a3da63977e2dbcb403abb8c63855be"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.part008",
+          "bytes": 24000000,
+          "sha256": "b15b268ae200eb03ac63e7c968169764bce2b3a4b1b657ee5aed156ec08d33f0"
+        },
+        {
+          "name": "causal_conv1d-1.7.0+cu.13.0.torch.2.11-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.part009",
+          "bytes": 14786335,
+          "sha256": "df015765e062183a314f93f1b45facdf2bd04bd84cc443de0f4a5b801cffaa4e"
+        }
+      ]
+    }
+  ]
+}
