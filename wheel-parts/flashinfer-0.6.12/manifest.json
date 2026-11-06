@@ -1,0 +1,129 @@
+{
+  "part_size_bytes": 24000000,
+  "files": [
+    {
+      "original_name": "flashinfer_cubin-0.6.12-py3-none-any.whl",
+      "original_bytes": 447533460,
+      "original_sha256": "01de132c493bb21d5df42ebe6890966cf83b40aa970dae06b2a3c0bed85f13ec",
+      "payload_name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip",
+      "payload_bytes": 437578659,
+      "payload_sha256": "ffc36c9c9838ab086c57a59f5a7de6e004177ef74d71727e81db5cf908d8e2ec",
+      "compression": "zip",
+      "tested_zip_bytes": 437578659,
+      "parts": [
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part001",
+          "bytes": 24000000,
+          "sha256": "b049115504e24f4ab81f40544f6f7a35394d20fc3c22e48b21da7035f91424b9"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part002",
+          "bytes": 24000000,
+          "sha256": "29cf26b3f6f00d9547220c3a62dd5fd110809c3e397acdb15ad5a90f48e80b81"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part003",
+          "bytes": 24000000,
+          "sha256": "095ec17b8ba76e1200398883f2c40d66d7df0b14889c58cba50ec90f9d54e402"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part004",
+          "bytes": 24000000,
+          "sha256": "c2e944767b46628f6024fca22c7d2fac035ff8530b029e1bbab524473996f95e"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part005",
+          "bytes": 24000000,
+          "sha256": "c41570f2f551211ee4c2485d74216c6575aef80b26ec5a4709edf4dccaf03423"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part006",
+          "bytes": 24000000,
+          "sha256": "b2203c773ef32e677ca64dadb9e9580bcab8f8961c3910c819670b92c07f868e"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part007",
+          "bytes": 24000000,
+          "sha256": "7f70e96d36a995ee153c161c42a840508ce5a30a0b34986e16b90492e6760b1b"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part008",
+          "bytes": 24000000,
+          "sha256": "cd5d4756d22376f0bdfdb5f832b275c89152506bc22956256512fe783ba58e43"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part009",
+          "bytes": 24000000,
+          "sha256": "5a899f4bfb90eebc6b2c16324bbbcaa387c408a2a1462d3caf78a0c196726439"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part010",
+          "bytes": 24000000,
+          "sha256": "e32ba1cf22280bdc8cf83195bd9e4be25723b94657d71c3c1869cdb180dc24a2"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part011",
+          "bytes": 24000000,
+          "sha256": "b7e2bbaa1efc3af51e3267db2c45192941ec420a00c3737f44bedc443135a09a"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part012",
+          "bytes": 24000000,
+          "sha256": "4131629d32865057742e4e9c99a67cd57d8e1404c9df50fd8dfebe3b5708f232"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part013",
+          "bytes": 24000000,
+          "sha256": "ee3c16ea7ec8559318c61e1068b2bf23f8a5e4488e99e647b3fc03136bf557c6"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part014",
+          "bytes": 24000000,
+          "sha256": "d6bb32f6badb3f068b0eec9b800cb4db4c45bc934bfd766a4040d1bed6fb7f80"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part015",
+          "bytes": 24000000,
+          "sha256": "4e271bdc7a170bb502fad90550a5b232a5f38dbd1b498394fb963a1687cb979e"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part016",
+          "bytes": 24000000,
+          "sha256": "303c58181ec28a9294651e714d1ad7ad63887a39926ebd13ac415f377b150ba6"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part017",
+          "bytes": 24000000,
+          "sha256": "e76679cda262518f2677acddb494fe55362578ac683f7f0e4b4a916ea0d44036"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part018",
+          "bytes": 24000000,
+          "sha256": "18a8bdaff01415b6583a78176d78eff274ae8ecdb0f4c66a94685b47bd11c5cb"
+        },
+        {
+          "name": "flashinfer_cubin-0.6.12-py3-none-any.whl.zip.part019",
+          "bytes": 5578659,
+          "sha256": "fea78495e45ae2fe9c7769fb2132979a1b2efb862fa393fcc9ae328bf37e0f1d"
+        }
+      ]
+    },
+    {
+      "original_name": "flashinfer_python-0.6.12-py3-none-any.whl",
+      "original_bytes": 13985243,
+      "original_sha256": "0c7a01e586b4796810d974cbf13a9c0eb2ade6a94d12e3220cf7782a1c09b8d3",
+      "payload_name": "flashinfer_python-0.6.12-py3-none-any.whl.zip",
+      "payload_bytes": 13182892,
+      "payload_sha256": "20ffd05ee625c547e1969b2131a3797cf9a27a55ba467fe7c17e41029716121e",
+      "compression": "zip",
+      "tested_zip_bytes": 13182892,
+      "parts": [
+        {
+          "name": "flashinfer_python-0.6.12-py3-none-any.whl.zip.part001",
+          "bytes": 13182892,
+          "sha256": "20ffd05ee625c547e1969b2131a3797cf9a27a55ba467fe7c17e41029716121e"
+        }
+      ]
+    }
+  ]
+}
