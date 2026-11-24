@@ -1,6 +1,6 @@
 # Enterprise guardrails baseline scorecard
 
-**20 November 2026 · Local, frozen baselines.** We have scored **6 of the 18 datasets in the requested inventory**: deepset Prompt Injections, NotInject, Gretel Synthetic Finance PII Multilingual, OpenAI Moderation, NVIDIA Aegis 2.0 and XSTest. **None of the five datasets listed under DUC-1000041213 has a saved local run.** ATBench and the finance subset of ExpGuardMix fill the most immediate gaps in that group. The inventory below accounts for all 18. The DUC identifier is the user’s grouping and conveys no approval status here.
+**24 November 2026 · Local, frozen baselines.** We have scored **6 of the 18 datasets in the requested inventory**: deepset Prompt Injections, NotInject, Gretel Synthetic Finance PII Multilingual, OpenAI Moderation, NVIDIA Aegis 2.0 and XSTest. **None of the five datasets listed under DUC-1000041213 has a saved local run.** ATBench and the finance subset of ExpGuardMix fill the most immediate gaps in that group. The inventory below accounts for all 18. The DUC identifier is the user’s grouping and conveys no approval status here.
 
 **Reading the tables.** Each rail has its own model columns. Where a cell contains two fractions, the column labeled *Measure* gives their order. **Caught** means flagged positives out of all labeled positives (higher is better). **False flags** means flagged negatives out of all labeled negatives (lower is better). A dash means no local score for that exact task and model. Balanced accuracy averages positive recall and negative recall. Synthetic renderings, repeated prompts and model replays share underlying examples.
 
@@ -10,25 +10,25 @@
 
 ### Shieldstral and Granite Guardian
 
-| Dataset and evaluated slice | Local measure | Shieldstral 1.0 3B | Granite Guardian 4.1 8B | Best published in the cited comparison (model) |
-|---|---|---|---|---|
-| NVIDIA Aegis 2.0 · human-labeled prompt-only subset | Caught · false flags · F1 | 73/85 · 4/354 · 90.1% | 67/85 · 6/354 · 84.8% | 87.54% unsafe F1 (LEG large, 304M, Aegis-trained) · different split |
-| XSTest · all author-labeled safe prompts | False flags (rate ↓) | 5/250 (2.0%) | 31/250 (12.4%) | 1.6% false flags (LEG large, 304M, WildGuardMix-trained) · same safe set |
-| OpenAI Moderation · hate | Caught · false flags · F1 | 148/161 · 81/565 · 75.9% | 152/161 · 177/565 · 62.0% | 81.7% F1 (Qwen2.5 7B Instruct, seed policy) · DPR split |
-| OpenAI Moderation · violence | Caught · false flags · F1 | 65/92 · 37/1,313 · 67.0% | 80/92 · 175/1,313 · 46.1% | 78.4% F1 (Qwen2.5 7B Instruct, DPR policy) · DPR split |
-| OpenAI Moderation · harassment | Caught · false flags · F1 | 53/75 · 148/1,324 · 38.4% | 69/75 · 340/1,324 · 28.5% | 78.1% F1 (Qwen2.5 7B Instruct, OpenAI Deep Research policy) · DPR split |
-| OpenAI Moderation · self-harm | Caught · false flags · F1 | 49/51 · 13/1,351 · 86.7% | 41/51 · 59/1,351 · 54.3% | 86.0% F1 (Qwen2.5 7B Instruct, DPR policy) · DPR split |
+| Dataset and evaluated slice | Local measure | Shieldstral 1.0 3B | Granite Guardian 4.1 8B | Granite Guardian 3.3 8B | Best published in the cited comparison (model) |
+|---|---|---|---|---|---|
+| NVIDIA Aegis 2.0 · human-labeled prompt-only subset | Caught · false flags · F1 | 73/85 · 4/354 · 90.1% | 67/85 · 6/354 · 84.8% | 61/85 · 4/354 · 81.3% | 87.54% unsafe F1 (LEG large, 304M, Aegis-trained) · different split |
+| XSTest · all author-labeled safe prompts | False flags (rate ↓) | 5/250 (2.0%) | 31/250 (12.4%) | 31/250 (12.4%) | 1.6% false flags (LEG large, 304M, WildGuardMix-trained) · same safe set |
+| OpenAI Moderation · hate | Caught · false flags · F1 | 148/161 · 81/565 · 75.9% | 152/161 · 177/565 · 62.0% | 155/161 · 177/565 · 62.9% | 81.7% F1 (Qwen2.5 7B Instruct, seed policy) · DPR split |
+| OpenAI Moderation · violence | Caught · false flags · F1 | 65/92 · 37/1,313 · 67.0% | 80/92 · 175/1,313 · 46.1% | 81/92 · 169/1,313 · 47.4% | 78.4% F1 (Qwen2.5 7B Instruct, DPR policy) · DPR split |
+| OpenAI Moderation · harassment | Caught · false flags · F1 | 53/75 · 148/1,324 · 38.4% | 69/75 · 340/1,324 · 28.5% | 67/75 · 326/1,324 · 28.6% | 78.1% F1 (Qwen2.5 7B Instruct, OpenAI Deep Research policy) · DPR split |
+| OpenAI Moderation · self-harm | Caught · false flags · F1 | 49/51 · 13/1,351 · 86.7% | 41/51 · 59/1,351 · 54.3% | 48/51 · 91/1,351 · 50.5% | 86.0% F1 (Qwen2.5 7B Instruct, DPR policy) · DPR split |
 
 ### Shieldstral, Granite Guardian and Gemma 4
 
-| Dataset and evaluated slice | Local measure | Shieldstral 1.0 3B | Granite Guardian 4.1 8B | Gemma 4 E4B IT | Gemma 4 E2B IT | Best published in the cited comparison (model) |
-|---|---|---|---|---|---|---|
-| NVIDIA Aegis 2.0 · human-labeled prompt-only subset | Caught · false flags · F1 | 73/85 · 4/354 · 90.1% | 67/85 · 6/354 · 84.8% | 32/85 · 1/354 · 54.2% | 11/85 · 7/354 · 21.4% | 87.54% unsafe F1 (LEG large, 304M, Aegis-trained) · different split |
-| XSTest · all author-labeled safe prompts | False flags (rate ↓) | 5/250 (2.0%) | 31/250 (12.4%) | 6/250 (2.4%) | 15/250 (6.0%) | 1.6% false flags (LEG large, 304M, WildGuardMix-trained) · same safe set |
-| OpenAI Moderation · hate | Caught · false flags · F1 | 148/161 · 81/565 · 75.9% | 152/161 · 177/565 · 62.0% | 126/161 · 70/565 · 70.6% | 105/161 · 62/565 · 64.0% | 81.7% F1 (Qwen2.5 7B Instruct, seed policy) · DPR split |
-| OpenAI Moderation · violence | Caught · false flags · F1 | 65/92 · 37/1,313 · 67.0% | 80/92 · 175/1,313 · 46.1% | 81/92 · 127/1,313 · 54.0% | 49/92 · 88/1,313 · 42.8% | 78.4% F1 (Qwen2.5 7B Instruct, DPR policy) · DPR split |
-| OpenAI Moderation · harassment | Caught · false flags · F1 | 53/75 · 148/1,324 · 38.4% | 69/75 · 340/1,324 · 28.5% | 59/75 · 188/1,324 · 36.6% | 39/75 · 122/1,324 · 33.1% | 78.1% F1 (Qwen2.5 7B Instruct, OpenAI Deep Research policy) · DPR split |
-| OpenAI Moderation · self-harm | Caught · false flags · F1 | 49/51 · 13/1,351 · 86.7% | 41/51 · 59/1,351 · 54.3% | 41/51 · 46/1,351 · 59.4% | 22/51 · 65/1,351 · 31.9% | 86.0% F1 (Qwen2.5 7B Instruct, DPR policy) · DPR split |
+| Dataset and evaluated slice | Local measure | Shieldstral 1.0 3B | Granite Guardian 4.1 8B | Granite Guardian 3.3 8B | Gemma 4 E4B IT | Gemma 4 E2B IT | Best published in the cited comparison (model) |
+|---|---|---|---|---|---|---|---|
+| NVIDIA Aegis 2.0 · human-labeled prompt-only subset | Caught · false flags · F1 | 73/85 · 4/354 · 90.1% | 67/85 · 6/354 · 84.8% | 61/85 · 4/354 · 81.3% | 32/85 · 1/354 · 54.2% | 11/85 · 7/354 · 21.4% | 87.54% unsafe F1 (LEG large, 304M, Aegis-trained) · different split |
+| XSTest · all author-labeled safe prompts | False flags (rate ↓) | 5/250 (2.0%) | 31/250 (12.4%) | 31/250 (12.4%) | 6/250 (2.4%) | 15/250 (6.0%) | 1.6% false flags (LEG large, 304M, WildGuardMix-trained) · same safe set |
+| OpenAI Moderation · hate | Caught · false flags · F1 | 148/161 · 81/565 · 75.9% | 152/161 · 177/565 · 62.0% | 155/161 · 177/565 · 62.9% | 126/161 · 70/565 · 70.6% | 105/161 · 62/565 · 64.0% | 81.7% F1 (Qwen2.5 7B Instruct, seed policy) · DPR split |
+| OpenAI Moderation · violence | Caught · false flags · F1 | 65/92 · 37/1,313 · 67.0% | 80/92 · 175/1,313 · 46.1% | 81/92 · 169/1,313 · 47.4% | 81/92 · 127/1,313 · 54.0% | 49/92 · 88/1,313 · 42.8% | 78.4% F1 (Qwen2.5 7B Instruct, DPR policy) · DPR split |
+| OpenAI Moderation · harassment | Caught · false flags · F1 | 53/75 · 148/1,324 · 38.4% | 69/75 · 340/1,324 · 28.5% | 67/75 · 326/1,324 · 28.6% | 59/75 · 188/1,324 · 36.6% | 39/75 · 122/1,324 · 33.1% | 78.1% F1 (Qwen2.5 7B Instruct, OpenAI Deep Research policy) · DPR split |
+| OpenAI Moderation · self-harm | Caught · false flags · F1 | 49/51 · 13/1,351 · 86.7% | 41/51 · 59/1,351 · 54.3% | 48/51 · 91/1,351 · 50.5% | 41/51 · 46/1,351 · 59.4% | 22/51 · 65/1,351 · 31.9% | 86.0% F1 (Qwen2.5 7B Instruct, DPR policy) · DPR split |
 
 **What the content-safety datasets contain.** Each example comes from a record scored above. Quotation marks indicate the original prompt. The other examples paraphrase the source. The last column gives the dataset’s label.
 
@@ -53,13 +53,15 @@ Aegis and OpenAI row numbers are zero-based offsets in the pinned source files. 
 
 When sharing CC BY 4.0 material, credit the creators, retain supplied notices, link to the license and indicate any changes, including paraphrases. For this scorecard, the Aegis example paraphrases NVIDIA’s test data and the XSTest example quotes Röttger et al. These license findings cover the three datasets in the comparison. [CC BY 4.0 terms](https://creativecommons.org/licenses/by/4.0/)
 
-Shieldstral had the highest F1 of the four models on Aegis and all four local OpenAI slices. E4B outscored E2B on all five F1 rows and raised fewer false flags on XSTest. With the broad harm question on Aegis, E4B caught 32 of 85 unsafe prompts and E2B caught 11. With the specific violence question on OpenAI Moderation, E4B caught 81 of 92 positives, the most of the four models.
+Shieldstral had the highest F1 of the five models on Aegis and all four full local OpenAI slices. E4B outscored E2B on all five F1 rows and raised fewer false flags on XSTest. With the broad harm question on Aegis, E4B caught 32 of 85 unsafe prompts and E2B caught 11. On OpenAI violence, E4B and Guardian 3.3 tied for the most positives caught (81/92), with 127 and 169 false flags respectively. Guardian 3.3 caught the most hate positives (155/161) and flagged 177 of 565 negatives.
 
-For a parallel violence rail that refers a case when either model flags it, adding E4B to Shieldstral caught 18 extra positives and referred 99 extra negatives on the same 1,405 cases. Adding Guardian to Shieldstral caught 17 extra positives and referred 144 extra negatives. Shieldstral alone caught 65 positives and referred 37 negatives. [Shieldstral decisions](baselines/untuned/results/scores.jsonl) · [E4B decisions](baselines/workflow/results/gemma4_e4b_content_safety.json) · [Guardian decisions](baselines/workflow/results/granite_guardian_moderation.json)
+For a parallel violence rail that refers a case when either model flags it, adding E4B to Shieldstral caught 18 extra positives and referred 99 extra negatives on the same 1,405 cases. Adding Guardian 3.3 to Shieldstral caught 18 extra positives and referred 137 extra negatives. Adding Guardian 4.1 caught 17 extra positives and referred 144 extra negatives. Shieldstral alone caught 65 positives and referred 37 negatives. [Shieldstral decisions](baselines/untuned/results/scores.jsonl) · [E4B decisions](baselines/workflow/results/gemma4_e4b_content_safety.json) · [Guardian 3.3 decisions](baselines/workflow/results/granite_guardian_3_3_content_safety.json) · [Guardian 4.1 decisions](baselines/workflow/results/granite_guardian_moderation.json)
 
 **How to read the external column.** Each value is the best result for that row in the cited study’s main comparison. For positive-class F1, higher is better. For false flags on the 250 safe XSTest prompts, lower is better. XSTest measures input classification here. The WildGuardMix-trained LEG model also scored 92.91% F1 on the full XSTest set at that operating point. Aegis uses 439 of 1,964 test records locally. The paper reports 87.54% mean unsafe F1 (±0.18 percentage points) on its own Aegis test population. The four OpenAI references come from the best reader and policy combination for each category in Table 1 of *Deep Policy Research* (DPR). These figures are external benchmark references, with no claim to an overall leaderboard rank. [LEG, Tables 1 and 13](https://aclanthology.org/2026.acl-long.2017.pdf) · [Deep Policy Research, Table 1](https://aclanthology.org/2026.findings-eacl.262.pdf)
 
-**Local scoring.** On Aegis, any of Shieldstral’s four category flags counts as a referral. Requiring the correct annotated category gives 72/85. Granite Guardian and both Gemma models used IBM’s broad harm criterion on Aegis and XSTest. All four models received the same category questions on OpenAI Moderation. Each category uses only its known labels, and the existing filter excludes records positive for the minors subcategory. The 4,932 judgments span 1,407 source rows because categories overlap. All Guardian verdicts parsed. F1 is the harmonic mean of precision and recall for the positive class. [Shieldstral OpenAI counts](baselines/untuned/results/scorecard.json) · [Guardian OpenAI judgments](baselines/workflow/results/granite_guardian_moderation.json) · [Shieldstral Aegis](baselines/untuned/results/aegis_inputs.json) · [Shieldstral XSTest](baselines/untuned/results/xstest_controls.json) · [Guardian Aegis and XSTest](baselines/workflow/results/granite_guardian_text_rails.json)
+**Local scoring.** On Aegis, any of Shieldstral’s four category flags counts as a referral. Requiring the correct annotated category gives 72/85. Both Granite Guardian versions and both Gemma models used the same broad harm criterion on Aegis and XSTest. All five models received the same category questions on OpenAI Moderation. Each category uses only its known labels, and the existing filter excludes records positive for the minors subcategory. The 4,932 judgments span 1,407 source rows because categories overlap. All Guardian verdicts parsed. F1 is the harmonic mean of precision and recall for the positive class. [Shieldstral OpenAI counts](baselines/untuned/results/scorecard.json) · [Guardian OpenAI judgments](baselines/workflow/results/granite_guardian_moderation.json) · [Shieldstral Aegis](baselines/untuned/results/aegis_inputs.json) · [Shieldstral XSTest](baselines/untuned/results/xstest_controls.json) · [Guardian Aegis and XSTest](baselines/workflow/results/granite_guardian_text_rails.json)
+
+**Granite Guardian 3.3 8B scoring.** All 5,621 judgments produced a valid verdict on one RTX PRO 6000 Blackwell GPU using IBM’s native text judge in BF16 with thinking disabled. We passed the frozen Gemma policy text through IBM’s custom-criterion field, including the broad harm definition on Aegis and XSTest. Each decision came from the model’s generated `<score>` tag. The evaluator checks each row’s source-text hash, ID, slice and label against the saved E4B run. IBM reports 87% F1 on its Aegis Safety Test and 77% on its broad OpenAI harm evaluation. The local tables use Aegis 2.0 prompt-only data and four separate OpenAI policies. [Pinned IBM checkpoint and published benchmarks](https://huggingface.co/ibm-granite/granite-guardian-3.3-8b/blob/b3421eda4ba6fc9f9a71121d7e62de08827469a4/README.md) · [Evaluator](baselines/workflow/benchmark_guardian_3_3_content_safety.py) · [Per-row verdicts and DPR counts](baselines/workflow/results/granite_guardian_3_3_content_safety.json)
 
 **Gemma scoring.** Each Google instruction-tuned checkpoint made 5,621 text-only judgments on the GPU using BF16, its native chat template and thinking disabled. Each decision used whichever first token had the higher score, `Yes` or `No`, with ties assigned to `No`. The prompt and threshold were fixed before evaluation. Across those judgments, the highest-scoring token in the full vocabulary was already one of the two labels in 5,613 cases for E4B and 5,406 for E2B. [Pinned E4B checkpoint](https://huggingface.co/google/gemma-4-E4B-it/tree/4ecc2ba63bcac23ba4a767fc87025b1450f84c9c) · [Pinned E2B checkpoint](https://huggingface.co/google/gemma-4-E2B-it/tree/4adf15748de9e1a0097b6274cee9c15836c41c37) · [Evaluator](baselines/workflow/benchmark_gemma_content_safety.py) · [E4B judgments and DPR counts](baselines/workflow/results/gemma4_e4b_content_safety.json) · [E2B judgments and DPR counts](baselines/workflow/results/gemma4_e2b_content_safety.json)
 
@@ -69,14 +71,105 @@ A published evaluation of Gemma 4 E4B reports 0.576 mean area under the precisio
 
 The authors released their test memberships. We joined them to our saved verdicts using the prompt and all eight original labels, so duplicate prompt strings resolve to the correct row. The table uses the authors’ positive-class F1 and their test population. For an excluded positive, the lower endpoint counts a miss and the upper endpoint counts a hit. These are exact bounds over the missing judgments. Self-harm has full coverage.
 
-| Category | Published test rows | Locally scored | Shieldstral F1 | Guardian F1 | Gemma 4 E4B IT F1 | Gemma 4 E2B IT F1 | Best published F1 (reader and policy) |
-|---|---:|---:|---:|---:|---:|---:|---|
-| Hate | 479 | 478/479 | 78.99–79.33% | 75.73–76.06% | 77.89–78.29% | 70.71–71.17% | 81.7% (Qwen2.5 7B Instruct, seed policy) |
-| Violence | 411 | 409/411 | 72.84–74.39% | 73.10–74.37% | 79.35–80.65% | 58.33–60.27% | 78.4% (Qwen2.5 7B Instruct, DPR policy) |
-| Harassment | 393 | 392/393 | 58.23–59.12% | 59.41–60.10% | 69.80–70.67% | 57.39–58.62% | 78.1% (Qwen2.5 7B Instruct, OpenAI Deep Research policy) |
-| Self-harm | 368 | 368/368 | 88.64% | 78.05% | 78.57% | 52.94% | 86.0% (Qwen2.5 7B Instruct, DPR policy) |
+| Category | Published test rows | Locally scored | Shieldstral F1 | Guardian 4.1 8B F1 | Guardian 3.3 8B F1 | Gemma 4 E4B IT F1 | Gemma 4 E2B IT F1 | Best published F1 (reader and policy) |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| Hate | 479 | 478/479 | 78.99–79.33% | 75.73–76.06% | 76.32–76.64% | 77.89–78.29% | 70.71–71.17% | 81.7% (Qwen2.5 7B Instruct, seed policy) |
+| Violence | 411 | 409/411 | 72.84–74.39% | 73.10–74.37% | 70.87–72.12% | 79.35–80.65% | 58.33–60.27% | 78.4% (Qwen2.5 7B Instruct, DPR policy) |
+| Harassment | 393 | 392/393 | 58.23–59.12% | 59.41–60.10% | 58.46–59.18% | 69.80–70.67% | 57.39–58.62% | 78.1% (Qwen2.5 7B Instruct, OpenAI Deep Research policy) |
+| Self-harm | 368 | 368/368 | 88.64% | 78.05% | 80.85% | 78.57% | 52.94% | 86.0% (Qwen2.5 7B Instruct, DPR policy) |
 
 E4B scored 79.35–80.65% F1 on the DPR violence split, above the paper’s 78.4% for Qwen2.5 7B Instruct with the DPR policy. The lower bound counts both unscored positives as misses. The split contains 327 negatives, compared with 1,313 in the broader local violence row. The local models retain their frozen policy questions. [Deep Policy Research, Table 1](https://aclanthology.org/2026.findings-eacl.262.pdf) · [Authors’ test files](https://github.com/xiaowu0162/deep-policy-research/tree/861a936cc05a4ead705e83ce2728aa015a67186b/data/openai_moderation/category_dataframes) · [Matched row IDs, counts and bounds](baselines/workflow/results/guardian_moderation_dpr_split.json) · [Split reproduction script](baselines/workflow/compare_moderation_reference.py)
+
+### Vision content safety
+
+**Pilot recommendation.** Start with one shared Shieldstral model for image review. The evaluator asks a separate question for each policy. At the tested cutoff of 0.5, Shieldstral caught 9/11 violence positives and had the highest mean F1 when all three policies received equal weight (62.1%, versus 59.0% for Gemma E4B and 33.5% for E2B). For erotic artwork, Shieldstral caught 3/5 with two false flags, and E4B caught 2/5 with none. Five positives are too few to select a general NSFW blocker.
+
+Keep E4B as an offline comparator for hate symbols, where it caught 9/18 at the default cutoff and Shieldstral caught 4/18. Select each model’s review threshold on separate development images, then compare recall on fresh images at the same false-review budget. Add E4B to live review only if it yields a meaningful gain over the shared model and measured latency and throughput under load meet the pilot’s targets.
+
+**Datasets and scope.** The OpenModerate test split supplies 11 photos of fights, riots or police brutality and 18 photos of Nazi or Ku Klux Klan symbols or regalia. Each policy uses the same 107 controls (81 ordinary photos and 26 benign look-alikes, including national flags and kitchen knives). The symbol policy covers visible symbols in documentary photos. The local art and workplace holdout contains five cataloged erotic artworks and 22 permitted figure-study, clinical, educational and workplace images. In total, 163 distinct images produced 837 single-model decisions. The models saw pixels, with a fixed policy question for Shieldstral and Gemma. The roster records per-photo credits and rights. [OpenModerate benchmark design](https://github.com/karammm/openmoderate-image-moderation/tree/5c2c734fe5774726237eeb19d28cacb6f08b386f/benchmark) · [Image manifest and source credits](baselines/workflow/vision_benchmark_roster.json)
+
+**Reading the tables.** F1, precision and recall use the policy-positive class. Balanced accuracy averages recall and specificity. Recall and false-positive rate include 95% Wilson intervals to show the uncertainty from the small samples. ROC AUC and average precision summarize how well the model ranks images across cutoffs. The Brier score measures squared error between the model score and the binary label on this sample. Undefined ratios appear as *n/a*. All latency columns use warm, single-image calls. With 27 images, the empirical p99 is the slowest call.
+
+#### OpenModerate test · visible violence
+
+118 images · 11 positive · 107 negative.
+
+| Metric | Shieldstral 1.0 3B | Gemma 4 E4B IT | Gemma 4 E2B IT |
+|---|---:|---:|---:|
+| True positives / false negatives | 9 / 2 | 4 / 7 | 2 / 9 |
+| False positives / true negatives | 0 / 107 | 0 / 107 | 0 / 107 |
+| Precision / negative predictive value | 100.0% / 98.2% | 100.0% / 93.9% | 100.0% / 92.2% |
+| Recall (95% CI) | 81.8% (52.3–94.9%) | 36.4% (15.2–64.6%) | 18.2% (5.1–47.7%) |
+| False-positive rate (95% CI) | 0.0% (0.0–3.5%) | 0.0% (0.0–3.5%) | 0.0% (0.0–3.5%) |
+| Specificity / false-negative rate | 100.0% / 18.2% | 100.0% / 63.6% | 100.0% / 81.8% |
+| Positive-class F1 | 90.0% | 53.3% | 30.8% |
+| Accuracy / balanced accuracy | 98.3% / 90.9% | 94.1% / 68.2% | 92.4% / 59.1% |
+| Matthews correlation coefficient | 0.896 | 0.584 | 0.410 |
+| ROC AUC / average precision | 1.000 / 1.000 | 0.997 / 0.971 | 0.994 / 0.940 |
+| Brier score ↓ | 0.020 | 0.053 | 0.076 |
+| Warm latency in ms · mean / p50 / p95 / p99 | 51.9 / 46.3 / 78.0 / 90.6 | 55.8 / 55.5 / 57.5 / 61.1 | 49.6 / 49.3 / 51.2 / 53.3 |
+
+Shieldstral ranked all 11 violence positives above the controls (ROC AUC and average precision both 1.000). At the fixed cutoff, two positives fell below the referral threshold. This makes threshold calibration on a separate development set worth testing. The OpenModerate authors report 81.8% recall and 0/107 false flags for their ViT-B/32 model. [Published OpenModerate results](https://github.com/karammm/openmoderate-image-moderation/blob/5c2c734fe5774726237eeb19d28cacb6f08b386f/benchmark/RESULTS.md)
+
+#### OpenModerate test · hate symbols and regalia
+
+125 images · 18 positive · 107 negative.
+
+| Metric | Shieldstral 1.0 3B | Gemma 4 E4B IT | Gemma 4 E2B IT |
+|---|---:|---:|---:|
+| True positives / false negatives | 4 / 14 | 9 / 9 | 4 / 14 |
+| False positives / true negatives | 0 / 107 | 0 / 107 | 0 / 107 |
+| Precision / negative predictive value | 100.0% / 88.4% | 100.0% / 92.2% | 100.0% / 88.4% |
+| Recall (95% CI) | 22.2% (9.0–45.2%) | 50.0% (29.0–71.0%) | 22.2% (9.0–45.2%) |
+| False-positive rate (95% CI) | 0.0% (0.0–3.5%) | 0.0% (0.0–3.5%) | 0.0% (0.0–3.5%) |
+| Specificity / false-negative rate | 100.0% / 77.8% | 100.0% / 50.0% | 100.0% / 77.8% |
+| Positive-class F1 | 36.4% | 66.7% | 36.4% |
+| Accuracy / balanced accuracy | 88.8% / 61.1% | 92.8% / 75.0% | 88.8% / 61.1% |
+| Matthews correlation coefficient | 0.443 | 0.679 | 0.443 |
+| ROC AUC / average precision | 0.984 / 0.923 | 0.998 / 0.991 | 0.996 / 0.975 |
+| Brier score ↓ | 0.072 | 0.066 | 0.112 |
+| Warm latency in ms · mean / p50 / p95 / p99 | 51.6 / 46.4 / 76.2 / 94.6 | 55.6 / 55.3 / 56.4 / 60.6 | 50.3 / 49.7 / 52.6 / 53.4 |
+
+E4B caught nine symbol-positive photos, compared with four each for Shieldstral and E2B. The OpenModerate authors report 61.1% recall and 0/107 false flags for their ViT-B/32 model. [Published OpenModerate results](https://github.com/karammm/openmoderate-image-moderation/blob/5c2c734fe5774726237eeb19d28cacb6f08b386f/benchmark/RESULTS.md)
+
+On a retrospective check of the saved scores, 13/18 positives scored above Shieldstral’s highest-scoring benign image. For E4B the count was 15/18. This uses all 107 labeled controls to locate the cutoff, so it illustrates sensitivity to threshold choice. The baseline tables retain the original 0.5 cutoff. [Shieldstral scores](baselines/workflow/results/vision_safety_shieldstral.json) · [Gemma E4B scores](baselines/workflow/results/vision_safety_gemma_e4b.json)
+
+#### Local art and workplace holdout · erotic material
+
+27 images · 5 positive · 22 negative.
+
+| Metric | Shieldstral 1.0 3B | Gemma 4 E4B IT | Gemma 4 E2B IT | Falconsai NSFW |
+|---|---:|---:|---:|---:|
+| True positives / false negatives | 3 / 2 | 2 / 3 | 1 / 4 | 0 / 5 |
+| False positives / true negatives | 2 / 20 | 0 / 22 | 0 / 22 | 0 / 22 |
+| Precision / negative predictive value | 60.0% / 90.9% | 100.0% / 88.0% | 100.0% / 84.6% | n/a / 81.5% |
+| Recall (95% CI) | 60.0% (23.1–88.2%) | 40.0% (11.8–76.9%) | 20.0% (3.6–62.4%) | 0.0% (0.0–43.4%) |
+| False-positive rate (95% CI) | 9.1% (2.5–27.8%) | 0.0% (0.0–14.9%) | 0.0% (0.0–14.9%) | 0.0% (0.0–14.9%) |
+| Specificity / false-negative rate | 90.9% / 40.0% | 100.0% / 60.0% | 100.0% / 80.0% | 100.0% / 100.0% |
+| Positive-class F1 | 60.0% | 57.1% | 33.3% | 0.0% |
+| Accuracy / balanced accuracy | 85.2% / 75.5% | 88.9% / 70.0% | 85.2% / 60.0% | 81.5% / 50.0% |
+| Matthews correlation coefficient | 0.509 | 0.593 | 0.411 | n/a |
+| ROC AUC / average precision | 0.864 / 0.597 | 0.941 / 0.810 | 0.964 / 0.853 | 0.527 / 0.213 |
+| Brier score ↓ | 0.111 | 0.112 | 0.148 | 0.185 |
+| Warm latency in ms · mean / p50 / p95 / p99 | 217.3 / 228.9 / 303.6 / 311.1 | 58.9 / 57.0 / 70.2 / 70.3 | 52.2 / 50.4 / 62.8 / 64.4 | 6.8 / 6.5 / 9.3 / 9.5 |
+
+Falconsai cleared all 27 images, so precision and the Matthews coefficient are undefined at this cutoff. Its 81.5% accuracy reflects the 22 benign controls. Explicit adult photography, representative bank uploads and graphic injury still need independent labeled evaluation.
+
+#### Parallel review and reproducibility
+
+A replay of the saved Shieldstral and E4B decisions gives the following result if either model can refer an image. Each row counts a shared image once. Latency for the two models serving together remains unmeasured.
+
+| Dataset and policy | Caught / positives | False flags / controls | Precision | Recall | F1 |
+|---|---:|---:|---:|---:|---:|
+| OpenModerate test · visible violence | 9/11 | 0/107 | 100.0% | 81.8% | 90.0% |
+| OpenModerate test · hate symbols and regalia | 11/18 | 0/107 | 100.0% | 61.1% | 75.9% |
+| Local art and workplace holdout · erotic material | 4/5 | 2/22 | 66.7% | 80.0% | 72.7% |
+
+Of 136 OpenModerate photos, 122 matched the published SHA-256. Fourteen used another rendition of the same Commons file. On the byte-identical subset, Shieldstral, E4B and E2B caught 8/10, 3/10 and 2/10 violence positives respectively. For hate symbols they caught 4/17, 9/17 and 4/17. All three cleared all 95 byte-identical controls on both policies. All 27 local holdout images matched their original hashes.
+
+Each model ran separately on one RTX PRO 6000 Blackwell GPU, one image at a time. Timing starts after image loading and includes model-specific preprocessing and synchronized inference. Shieldstral and both Gemmas used BF16. Falconsai used FP32. All decisions used a fixed 0.5 threshold. The per-image files contain the raw scores, decisions and timings used for these tables. Falconsai was evaluated only on sexual content. [Shieldstral](baselines/workflow/results/vision_safety_shieldstral.json) · [Gemma E4B](baselines/workflow/results/vision_safety_gemma_e4b.json) · [Gemma E2B](baselines/workflow/results/vision_safety_gemma_e2b.json) · [Falconsai](baselines/workflow/results/vision_safety_falconsai.json) · [GPU evaluator](baselines/workflow/benchmark_vision_safety.py)
+
+To reproduce a model column, run `uv run --script baselines/workflow/benchmark_vision_safety.py --model shieldstral` on a CUDA host. The other model arguments are `gemma_e4b`, `gemma_e2b` and `falconsai`. The evaluator verifies each downloaded image against the saved digest.
 
 ## 2. Direct jailbreak
 
@@ -136,6 +229,8 @@ The passage experiment used thresholds fixed on other facts. Guardian’s custom
 | ↳ Same 27 images embedded in a review screen, whole screen | Review positives referred · controls falsely referred | 1/5 · 3/22 | — | 0/5 · 0/22 |
 
 The text comparison excludes records lacking an explicit negative label for the minors category. Referring a text when either model flags it adds **50 positives and 67 negatives** to Shieldstral’s referrals on these same 895 texts. Visual positives are narrowly defined by the local artwork-review policy and catalog descriptions. [Text results](baselines/workflow/guardian_evaluation.md#additional-text-rails) · [XSTest category results](baselines/untuned/results/xstest_controls.json) · [Image results](baselines/workflow/results/visual_comparison.json) · [Embedded images](baselines/workflow/results/visual_crops.json)
+
+The full model comparison and image-level timing results are under [Vision content safety](#vision-content-safety).
 
 ## Additional results from the architecture pilot
 
